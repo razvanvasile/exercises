@@ -1,0 +1,9 @@
+*.pyc
+.cache
+bin
+lib
+include
+pip-selfcheck.json
+.coverage
+share
+rml/#*
