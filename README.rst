@@ -1,4 +1,4 @@
-|build-status| |coverage| |health|
+|health|
 
 
 .. |health| image:: https://landscape.io/github/razvanvasile/RML/master/landscape.svg?style=flat
