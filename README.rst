@@ -1,32 +1,14 @@
-sudo: false
-language: python
-python:
-  - "2.7"
-  - "3.3"
-  - "3.4"
-  - "3.5"
+|build-status| |coverage| |health|
 
-install:
-  # We do this conditionally because it saves us some downloading if the
-  # version is the same.
-  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
-    else
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    fi
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  # Useful for debugging any issues with conda
-  - conda info -a
 
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pytest numpy scipy pytest-pep8
-  - conda install --file=requirements/conda.txt
-  - source activate test-environment
-  - pip install -r requirements/pip.txt
+.. |build-status| image:: https://travis-ci.org/razvanvasile/RML.svg?branch=master
+    :target: https://travis-ci.org/razvanvasile/RML
+    :alt: Build Status
 
-script:
-  - export PYTHONPATH=.
-  - py.test
+.. |coverage| image:: https://coveralls.io/repos/razvanvasile/RML/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/razvanvasile/RML?branch=master
+    :alt: Test coverage
+
+.. |health| image:: https://landscape.io/github/razvanvasile/RML/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/razvanvasile/RML/master
+   :alt: Code Health
