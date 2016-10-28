@@ -18,7 +18,7 @@ def lower_primes(number):
 
     primes = list()
     for i in range(2, number+1):
-        print i, number
+        print(i, number)
         if prime(i):
             primes.append(i)
     return primes
